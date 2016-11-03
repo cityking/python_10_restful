@@ -20,6 +20,7 @@ from restful_app import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
+    url(r'^disconnect/$', views.disconnect, name='disconnect'),
     url(r'^poems/$', views.PoemListView.as_view(), name='poem_list'),
     url(r'^poem/(?P<pk>[0-9]+)$', views.poem_detail, name='poem_detail'),
 ]
