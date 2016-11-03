@@ -12,8 +12,11 @@ from .signals import signalCity,signal_callback
 # Create your views here.
 def home(request):
 	#触发信号
-	signalCity.send(sender=None, city="hello")	
-	return HttpResponse("hello world")
+	#signalCity.send(sender=None, city="hello")	
+
+	from_source = request.session.get('from_source', 'unkown')
+	res = "hello friend, u come from %s" % from_source
+	return HttpResponse(res)
 
 def disconnect(request):
 	#注销信号

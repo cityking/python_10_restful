@@ -49,8 +49,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'restful_app.middleware.CheckSourceMiddleware',
+    'restful_app.middleware.ForbidSomeIpMiddleware',
 ]
-
+MIDDLEWARE_CLASSES = [
+]
 ROOT_URLCONF = 'restful_project.urls'
 
 TEMPLATES = [
